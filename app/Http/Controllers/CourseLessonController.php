@@ -53,6 +53,7 @@ class CourseLessonController extends Controller
 
         $model->title = $request->input('title');
         $model->course_id = $course->id;
+        $model->video = $request->video;
 
         $model->save();
 
@@ -78,7 +79,7 @@ class CourseLessonController extends Controller
      */
     public function edit(Course $course ,CourseLesson $lesson)
     {
-        return view('admin.courses.attachments.create', ['course'=> $course ,'isCreating' => false, 'lesson' => $lesson]);
+        return view('admin.courses.lessons.create', ['course'=> $course ,'isCreating' => false, 'lesson' => $lesson]);
     }
 
     /**
@@ -99,6 +100,9 @@ class CourseLessonController extends Controller
 
         if ($request->has('title') && $request->input('title') != null && $lesson->title != $request->input('title')) {
             $lesson->title = $request->input('title');
+            $updated = true;
+        } if ($request->has('video') && $request->input('video') != null && $lesson->video != $request->input('video')) {
+            $lesson->video = $request->input('video');
             $updated = true;
         }
         if ($updated) {

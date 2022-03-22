@@ -23,6 +23,10 @@
                     <label class="form-label">إسم الدرس</label>
                     <input type="text" class="form-control form-control-solid" name="title" value="{{ $lesson->title }}" placeholder="إسم الدرس">
                 </div>
+                <div class="mb-10">
+                    <label class="form-label"> رابط الفيديو</label>
+                    <input type="text" class="form-control form-control-solid" name="video" value="{{ $lesson->video }}" placeholder="رابط الفيديو">
+                </div>
                 <div class="d-flex">
                     <button class="btn btn-primary btn-lg">حفظ البيانات</button>
                 </div>
