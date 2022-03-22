@@ -64,7 +64,11 @@
     border: solid 1px #d1d8e5;
     background-color: #fff;
 }
-
+.files-section .file-row .file-box > img{
+    width:100px;
+    height:100px;
+    object-fit: cover;
+}
 
 /*Start Came from style  */
 

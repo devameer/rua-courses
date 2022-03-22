@@ -5,7 +5,7 @@
             <p class="file-name">
                {{ $file->name }} </p>
             <p class="book-info">
-               {{ $file->description }} </p>
+               {!! $file->description !!} </p>
             <div class="download-box">
                 <a href="{{ asset($file->file) }}" download class="download-link">
                     تحميل

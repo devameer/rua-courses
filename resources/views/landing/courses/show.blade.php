@@ -38,9 +38,9 @@
                                 <span class="coures-count">
                                     الدروس({{ $course->lessons->count() }})
                                 </span>
-                                <span class="total-coures-time">
+                                {{-- <span class="total-coures-time">
                                     26:04:37
-                                </span>
+                                </span> --}}
                             </div>
                             <ul class="videos-list list-unstyled">
                                 {{-- <li class="active-coures-file">

@@ -17,7 +17,7 @@ class RuaFileController extends Controller
     public function _index()
     {
         return view('landing.files.index', [
-            'rua_files' => RuaFile::query()->orderBy('created_at', 'desc')->paginate(10)
+            'files' => RuaFile::query()->orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
     // public function _show(RuaFile $file)

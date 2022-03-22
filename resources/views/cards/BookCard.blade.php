@@ -12,7 +12,7 @@
             {{ $book->content }}
         </p>
         <p class="data">
-            {{ date('M d, Y' , strtotime($book->created_at)) }} <i class="fa-regular fa-calendar-days"></i>
+            <i class="fa-regular fa-calendar-days"></i> {{ date('M d, Y' , strtotime($book->created_at)) }}
         </p>
     </div>
 </div>
