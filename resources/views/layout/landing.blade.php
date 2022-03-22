@@ -101,9 +101,12 @@
 
                                         <br>
                                         <li>
-                                            <a class="dropdown-item" href="Login.html">
+                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-reload="true"">
                                                 <i class="fa-light fa-right-from-bracket"></i> الخروج
                                             </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
                                         </li>
                                     </ul>
                                 </li>
@@ -114,7 +117,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('logout') }}">
+                                    <a class="nav-link " href="{{ route('register') }}">
                                         التسجيل
                                     </a>
                                 </li>

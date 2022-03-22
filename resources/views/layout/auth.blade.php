@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="/landing/css/rtl.css">
 
     <title>تسجيل الدخول</title>
+    <style>
+        .contact-inputs input{
+            width:auto
+        }
+    </style>
 </head>
 
 <body>

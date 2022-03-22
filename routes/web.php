@@ -91,5 +91,5 @@ Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'
 
 // require __DIR__.'/auth.php';
 
-Auth::routes();
+Auth::routes(['verify' => false]);
 
