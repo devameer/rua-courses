@@ -1,0 +1,54 @@
+.account-sing {
+    height: 100vh;
+}
+
+.login-link {
+    background-color: #7d1935;
+}
+
+.login-link a {
+    color: #fff;
+}
+
+.creat-account-link {
+    background-color: #e8eaed;
+}
+
+.creat-account-link a {
+    color: #353d51;
+}
+
+.forget-password-box {
+    width: 370px;
+}
+
+.forget-password-box a {
+    font-size: 14px;
+    text-align: right;
+    color: #1a1818;
+    text-decoration: none;
+}
+
+@media (max-width: 576px) {
+    .forget-password-box {
+        width: 100%;
+    }
+}
+
+
+/*Start Forget Password Css  */
+
+.enter-ur-email-text {
+    width: 370px;
+    color: #393d48;
+}
+
+@media (max-width: 576px) {
+    .enter-ur-email-text {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+
+/*End Forget Password Css  */

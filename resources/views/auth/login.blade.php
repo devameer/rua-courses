@@ -1,105 +1,46 @@
-<x-auth-layout>
+@extends('layout.auth')
+@section('styles')
+@endsection
+@section('content')
+    <div class="sing-up-form account-sing-form col-lg-6">
+        <div class="img-account-type-page">
+            <img src="/landing/images/Logo.png" alt="">
+            <p class="type-sing-page">
+                تسجيل الدخول
+            </p>
+        </div>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-    <!--begin::Signin Form-->
-    <form method="POST" action="{{ theme()->getPageUrl('login') }}" class="form w-100" novalidate="novalidate" id="kt_sign_in_form">
-    @csrf
-
-    <!--begin::Heading-->
-        <div class="text-center mb-10">
-            <!--begin::Title-->
-            <h1 class="text-dark mb-3">
-                {{ __('Sign In to Metronic') }}
-            </h1>
-            <!--end::Title-->
-
-            <!--begin::Link-->
-            <div class="text-gray-400 fw-bold fs-4">
-                {{ __('New Here?') }}
-
-                <a href="{{ theme()->getPageUrl('register') }}" class="link-primary fw-bolder">
-                    {{ __('Create an Account') }}
-                </a>
+            <div class="contact-inputs">
+                <label for="userName">البريد الإلكتروني </label>
+                <input id="email" type="email" placeholder="ample@gmail.com" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             </div>
-            <!--end::Link-->
-        </div>
-        <!--begin::Heading-->
 
-        <div class="mb-10 bg-light-info p-8 rounded"><div class="text-info"> Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to continue. </div></div>
-
-        <!--begin::Input group-->
-        <div class="fv-row mb-10">
-            <!--begin::Label-->
-            <label class="form-label fs-6 fw-bolder text-dark">{{ __('Email') }}</label>
-            <!--end::Label-->
-
-            <!--begin::Input-->
-            <input class="form-control form-control-lg form-control-solid" type="email" name="email" autocomplete="off" value="{{ old('email', 'demo@demo.com') }}" required autofocus/>
-            <!--end::Input-->
-        </div>
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div class="fv-row mb-10">
-            <!--begin::Wrapper-->
-            <div class="d-flex flex-stack mb-2">
-                <!--begin::Label-->
-                <label class="form-label fw-bolder text-dark fs-6 mb-0">{{ __('Password') }}</label>
-                <!--end::Label-->
-
-                <!--begin::Link-->
-                @if (Route::has('password.request'))
-                    <a href="{{ theme()->getPageUrl('password.request') }}" class="link-primary fs-6 fw-bolder">
-                        {{ __('Forgot Password ?') }}
-                    </a>
-            @endif
-            <!--end::Link-->
+            <div class="contact-inputs pas-edit">
+                <label for="password">كلمة المرور</label>
+                <input  placeholder="........." id="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             </div>
-            <!--end::Wrapper-->
+            <div class="forget-password-box">
+                <a href="Forget-password.html">نسيت كلمة الرور؟</a>
+            </div>
+            <div class="login-link send-message-link share-linke margin-fit-link">
+                <button class="share btn">تسجيل الدخول</butt>
+            </div>
+            <div class="creat-account-link send-message-link share-linke">
+                <a href="Sign-up.html" class="share">إنشاء حساب</a>
+            </div>
+        </form>
 
-            <!--begin::Input-->
-            <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" value="demo" required/>
-            <!--end::Input-->
-        </div>
-        <!--end::Input group-->
-
-        <!--begin::Input group-->
-        <div class="fv-row mb-10">
-            <label class="form-check form-check-custom form-check-solid">
-                <input class="form-check-input" type="checkbox" name="remember"/>
-                <span class="form-check-label fw-bold text-gray-700 fs-6">{{ __('Remember me') }}
-            </span>
-            </label>
-        </div>
-        <!--end::Input group-->
-
-        <!--begin::Actions-->
-        <div class="text-center">
-            <!--begin::Submit button-->
-            <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
-                @include('partials.general._button-indicator', ['label' => __('Continue')])
-            </button>
-            <!--end::Submit button-->
-
-            <!--begin::Separator-->
-            <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div>
-            <!--end::Separator-->
-
-            <!--begin::Google link-->
-            <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg') }}" class="h-20px me-3"/>
-                {{ __('Continue with Google') }}
-            </a>
-            <!--end::Google link-->
-
-            <!--begin::Facebook link-->
-            <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg') }}" class="h-20px me-3"/>
-                {{ __('Continue with Facebook') }}
-            </a>
-            <!--end::Facebook link-->
-        </div>
-        <!--end::Actions-->
-    </form>
-    <!--end::Signin Form-->
-
-</x-auth-layout>
+    </div>
+@endsection

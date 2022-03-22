@@ -188,6 +188,6 @@ if (!function_exists('isRTL')) {
      */
     function isRTL()
     {
-        return (bool) request()->input('rtl');
+        return true;
     }
 }

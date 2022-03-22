@@ -1,0 +1,22 @@
+/* Start navbar */
+
+.arabic-dir {
+    direction: rtl;
+}
+
+
+/* End navbar */
+
+
+/* Start Main interface */
+
+.text-algin-rtl {
+    text-align: right;
+}
+
+.selfend {
+    align-items: self-end;
+}
+
+
+/* End Main interface */

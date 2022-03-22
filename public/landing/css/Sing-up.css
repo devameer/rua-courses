@@ -1,0 +1,122 @@
+body {
+    background-image: none;
+    overflow-x: hidden;
+}
+
+.account-bg-img {
+    background-image: url(../images/singUp-bg.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.account-bg-img img {
+    max-width: 85%;
+}
+
+.account-sing-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.img-account-type-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.type-sing-page {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1a1818;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.sign-select {
+    border-radius: 14px;
+    border: solid 1px #878e9e;
+    background-color: #fff;
+    outline: none;
+    padding: 7px 10px;
+    width: 370px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.account-sing input,
+.account-sing select {
+    border-radius: 14px;
+    border: solid 1px #d1d8e5;
+}
+
+.pas-edit input {
+    font-weight: 900;
+}
+
+.pas-edit input::placeholder {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.login-link {
+    background-color: #e8eaed;
+}
+
+.login-link a {
+    color: #353d51;
+}
+
+.margin-fit-link {
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.check-terms {
+    display: flex;
+    max-width: 370px;
+    text-align: center;
+}
+
+.check-terms #checkTerms {
+    width: 22px;
+    margin-left: 5px;
+}
+
+
+/* Start Sign up  */
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: #00AEF0;
+    border-color: #00AEF0;
+}
+
+.check-terms a {
+    color: #008855;
+}
+
+
+/* End Sign up  */
+
+@media (max-width: 576px) {
+    .mb-3,
+    .account-sing select {
+        width: 100%;
+    }
+    .check-terms #checkTerms {
+        width: 28px !important;
+        margin-left: 2px;
+    }
+    .type-sing-page {
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+}

@@ -26,15 +26,7 @@
     <!--begin::Card-->
     <div class="card shadow-none w-100">
         <!--begin::Header-->
-        <div class="card-header" id="kt_explore_header">
-            <h3 class="card-title fw-bolder text-gray-700">{{ __('Explore Metronic') }}</h3>
-
-            <div class="card-toolbar">
-                <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_explore_close">
-                    {!! theme()->getSvgIcon("icons/duotone/Navigation/Close.svg", "svg-icon-2") !!}
-                </button>
-            </div>
-        </div>
+       
         <!--end::Header-->
 
         <!--begin::Body-->

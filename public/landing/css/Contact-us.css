@@ -1,0 +1,119 @@
+.contact-us {
+    padding: 60px 0 100px;
+}
+
+.contact-us .contact-us-box {
+    padding: 59px 40px 75px;
+    object-fit: contain;
+    border-radius: 14px;
+    background-color: #fff;
+}
+
+.contact-us .contact-us-box .marketing-img {
+    max-width: 100%;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.contact-methods span {
+    font-size: 16px;
+    margin-right: 15px;
+    color: #353d51;
+}
+
+.contact-inputs {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+
+.contant-form {
+    display: grid;
+    justify-items: end;
+}
+
+.contact-main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #7d1935;
+}
+
+.contact-q {
+    line-height: normal;
+    color: #615d5d;
+}
+
+.send-message-link {
+    width: 370px;
+    background-color: #7d1935;
+}
+
+.contact-inputs label {
+    margin-bottom: 5px;
+}
+
+.contact-inputs input,
+.contact-inputs textarea {
+    border-radius: 14px;
+    border: solid 1px #878e9e;
+    background-color: #fff;
+    outline: none;
+    padding: 7px 10px;
+    width: 370px;
+    margin-bottom: 15px;
+}
+
+.contact-inputs input::placeholder,
+.contact-inputs textarea::placeholder {
+    text-align: right;
+    color: #d1d8e5;
+}
+
+@media(max-width:991px) {
+    .contact-us .contact-us-box {
+        flex-direction: column-reverse;
+    }
+    .contant-form {
+        justify-items: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:768px) {
+    .contact-methods {
+        flex-direction: column;
+        align-items: end;
+    }
+    .contact-type {
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:576px) {
+    .contact-us {
+        padding: 60px 10px 100px;
+    }
+    .contact-us .contact-us-box {
+        padding: 40px 15px 50px;
+    }
+    .contact-inputs,
+    .contact-inputs input,
+    .contact-inputs textarea,
+    .send-message-link {
+        width: 100%;
+    }
+    .contant-form,
+    .img-and-content {
+        padding: 0;
+    }
+    .contact-main-title {
+        font-size: 27px;
+    }
+    .contact-q {
+        font-size: 14px;
+    }
+}

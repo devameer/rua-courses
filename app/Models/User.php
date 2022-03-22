@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Core\Traits\SpatieLogsActivity;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,7 +11,6 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
-    use SpatieLogsActivity;
     use HasRoles;
 
     /**
@@ -78,5 +76,22 @@ class User extends Authenticatable implements MustVerifyEmail
     public function info()
     {
         return $this->hasOne(UserInfo::class);
+    }
+
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course', 'users_courses', 'user_id', 'course_id');
+    }
+
+    public function isAdmin(): bool
+    {
+        if ($this->role === 1) {
+            return true;
+
+        } else {
+            return false;
+
+        }
     }
 }

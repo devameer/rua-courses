@@ -1,0 +1,251 @@
+.profile-section {
+    padding: 80px 0 150px;
+}
+
+@media(max-width:576px) {
+    .profile-section {
+        padding: 80px 0;
+    }
+}
+
+.profile-main-title-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.profile-main-title-box .profile-title {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.profile-main-title-box .profile-hello {
+    font-size: 24px;
+}
+
+.profile-and-policy {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    column-gap: 30px;
+}
+
+.profile-data,
+.settings-data {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+.profile-img-info {
+    text-align: center;
+}
+
+.center-profile-img-box {
+    margin-bottom: 40px;
+}
+
+.edit-img {
+    color: #615d5d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.center-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-img img {
+    margin-left: 5px;
+}
+
+.profile-name {
+    font-size: 20px;
+    color: #1e1e1e;
+    font-weight: bold;
+}
+
+.profile-and-policy .small-section-box,
+.profile-and-policy .larg-section-box {
+    background-color: #fff;
+    border-radius: 24px;
+    border: solid 1px #d1d8e5;
+    background-color: #fff;
+}
+
+.small-section-box.profile-small-box {
+    padding: 30px 30px 50px;
+    height: 70%;
+}
+
+.profile-and-policy .larg-section-box {
+    padding: 60px;
+}
+
+.profile-larg-box .profile-forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    direction: rtl;
+}
+
+.profile-inputs {
+    margin-bottom: 20px;
+}
+
+.profile-inputs label {
+    color: #1e1e1e;
+    margin-bottom: 5px;
+}
+
+.input-style::placeholder {
+    font-size: 16px;
+    color: #d1d8e5;
+}
+
+.input-style {
+    width: 100%;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+.phone-flag {
+    position: relative;
+}
+
+.flag-img {
+    position: absolute;
+    left: 4%;
+    top: 17%;
+    background: #fff;
+    padding-right: 5px;
+    border-right: 1px solid #d1d8e5;
+    color: #393d48;
+}
+
+.gender-box {
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.gender-box button {
+    border-radius: 14px;
+    background-color: #fff;
+    border: solid 2px #d1d8e5 !important;
+    font-weight: bold;
+    text-align: right;
+    width: 130px;
+    height: 35px;
+    padding-right: 20px;
+    color: #10131d;
+    margin-left: 10px;
+}
+
+.gender-box button:hover {
+    box-shadow: 0 3px 22px 0 rgba(125, 25, 53, 0.3);
+    background-color: #7d1935;
+    border-color: #7d1935 !important;
+    color: #fff;
+}
+
+.gender-box button:focus {
+    box-shadow: 0 3px 22px 0 rgba(125, 25, 53, 0.3);
+    background-color: #7d1935;
+    color: #fff;
+    border-color: #7d1935;
+}
+
+.profile-and-policy .share-linke {
+    background-color: #7d1935;
+    margin: auto;
+}
+
+.move-list-links {
+    text-align: center;
+}
+
+.move-list-links li {
+    text-align: right;
+    padding: 5px 10px 5px 0;
+    border-radius: 14px;
+    margin-bottom: 5px;
+}
+
+.move-list-links a {
+    text-decoration: none;
+    color: #1e1e1e;
+}
+
+.move-list-links a i {
+    margin-left: 15px;
+}
+
+.move-list-links a:hover li {
+    background-color: #7d1935;
+}
+
+.move-list-links a:hover {
+    color: #fff;
+}
+
+.logout-box {
+    margin-top: 90px;
+}
+
+@media(max-width:991px) {
+    .profile-and-policy {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .profile-and-policy .small-section-box {
+        margin-bottom: 30px;
+    }
+    .small-section-box.profile-small-box {
+        padding: 30px;
+    }
+    .logout-box {
+        margin-top: 0;
+    }
+}
+
+@media(max-width:768px) {
+    .profile-larg-box .profile-forms {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:576px) {
+    .profile-and-policy .larg-section-box {
+        padding: 35px 20px;
+    }
+    .profile-main-title-box .profile-title {
+        font-size: 32px;
+    }
+    .profile-main-title-box .profile-hello {
+        font-size: 21px;
+    }
+    .profile-data {
+        font-size: 27px;
+    }
+    .gender-box {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    .gender-box button {
+        margin-bottom: 10px;
+    }
+}
+
+.active-profile-subject {
+    color: #fff !important;
+}
+
+.active-profile-subject li {
+    background-color: #7d1935 !important;
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html lang="ar" dir="rtl" direction="rtl" style="direction:rtl;" >
 {{--
 Product Name: {{ theme()->getOption('product', 'description') }}
 Author: KeenThemes
@@ -15,7 +15,7 @@ License: {{ theme()->getOption('product', 'license') }}
 {{-- begin::Head --}}
 <head>
     <meta charset="utf-8"/>
-    <title>{{ ucfirst(theme()->getOption('meta', 'title')) }} | Keenthemes</title>
+    <title> منصة رؤى التعليمية</title>
     <meta name="description" content="{{ ucfirst(theme()->getOption('meta', 'description')) }}"/>
     <meta name="keywords" content="{{ theme()->getOption('meta', 'keywords') }}"/>
     <link rel="canonical" href="{{ ucfirst(theme()->getOption('meta', 'canonical')) }}"/>
@@ -101,6 +101,7 @@ License: {{ theme()->getOption('product', 'license') }}
 @endif
 
 @yield('scripts')
+@include('admin.inc.messages')
 </body>
 {{-- end::Body --}}
 </html>

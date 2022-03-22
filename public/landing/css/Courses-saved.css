@@ -1,0 +1,38 @@
+.profile-section .section-name-and-menu {
+    display: block;
+}
+
+.profile-section .section-name-and-menu .section-title {
+    color: #000;
+}
+
+.profile-section .videos-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+}
+
+.small-section-box.profile-small-box {
+    height: 50%;
+}
+
+.logout-box {
+    margin-top: 180px;
+}
+
+@media (max-width: 991px) {
+    .logout-box {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:576px) {
+    .profile-section .videos-container {
+        column-gap: 20px;
+    }
+    .profile-section .videos-container .card .card-title {
+        font-size: 12px;
+    }
+    .profile-section .videos-container .card .card-text {
+        font-size: 13px;
+    }
+}

@@ -22,9 +22,7 @@
 
                     <!--begin::Content-->
                     <div class="content d-flex flex-column flex-column-fluid {{ theme()->printHtmlClasses('content', false) }}" id="kt_content">
-                    @if (theme()->getOption('layout', 'toolbar/display') === true)
-                        {{ theme()->getView('layout/toolbars/_' . theme()->getOption('layout', 'toolbar/layout')) }}
-                    @endif
+
 
                         <!--begin::Post-->
                         <div class="post d-flex flex-column-fluid" id="kt_post">
@@ -44,7 +42,7 @@
 
         <!--begin::Drawers-->
         {{ theme()->getView('partials/topbar/_activity-drawer') }}
-        {{ theme()->getView('partials/explore/_main') }}
+        {{-- {{ theme()->getView('partials/explore/_main') }} --}}
         <!--end::Drawers-->
 
         @if(theme()->getOption('layout', 'scrolltop/display') === true)

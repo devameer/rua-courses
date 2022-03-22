@@ -1,0 +1,121 @@
+.books-section,
+.files-section {
+    padding: 50px 10px;
+}
+
+.books-section .container,
+.files-section .container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 60px 40px;
+}
+
+@media(max-width:576px) {
+    .books-section .container {
+        padding: 30px 20px;
+    }
+}
+
+.books-section .section-title,
+.files-section .section-title {
+    color: #1e1e1e;
+    margin-bottom: 1rem;
+}
+
+.books-section .books-text,
+.files-section .files-text {
+    line-height: 1.88;
+    text-align: right;
+    color: #615d5d;
+    width: 75%;
+    margin-left: auto;
+}
+
+@media(max-width:991px) {
+    .books-section .books-text,
+    .files-section .files-text {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+.books-section .book-row .book-bar .box-discreption .book-name {
+    color: #1e1e1e;
+}
+
+.book-info,
+.data {
+    color: #615d5d;
+    text-align: right;
+}
+
+.see-more-box {
+    background-color: #fff;
+    border: solid 1px #812f33;
+    transition: 0.2s;
+}
+
+.see-more-box:hover {
+    background-color: #00AEF0;
+    border-color: #00AEF0;
+}
+
+.files-section .file-row .file-box {
+    border: solid 1px #d1d8e5;
+    background-color: #fff;
+}
+
+
+/*Start Came from style  */
+
+.books-section .book-row .book-bar,
+.files-section .file-row .file-bar {
+    margin-bottom: 30px;
+}
+
+@media(min-width:992px) {
+    .books-section .book-row .book-bar,
+    .files-section .file-row .file-bar {
+        width: calc((100% - 75px) / 4);
+    }
+}
+
+@media(max-width:991px) {
+    .books-section .book-row .book-bar,
+    .files-section .file-row .file-bar {
+        width: 45%;
+    }
+}
+
+@media(max-width:576px) {
+    .books-section .book-row .book-bar,
+    .files-section .file-row .file-bar {
+        width: 48%;
+    }
+}
+
+
+/*End Came from style  */
+
+
+/* Start Files Only Responsive */
+
+@media(max-width:576px) {
+    .files-section .container {
+        padding: 30px 20px;
+    }
+    .files-section .download-box {
+        width: 100%;
+        height: 33px;
+    }
+    .files-section .download-box img {
+        margin-left: 0;
+    }
+    .files-section .book-info {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* End Files Only  */

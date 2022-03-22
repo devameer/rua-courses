@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Account\SettingsController;
 use App\Http\Controllers\Auth\SocialiteLoginController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\Documentation\ReferencesController;
 use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
@@ -19,49 +20,76 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('index');
-});
+// Route::get('/', function () {
+//     return redirect('index');
+// });
 
-$menu = theme()->getMenu();
-array_walk($menu, function ($val) {
-    if (isset($val['path'])) {
-        $route = Route::get($val['path'], [PagesController::class, 'index']);
+// $menu = theme()->getMenu();
+// array_walk($menu, function ($val) {
+//     if (isset($val['path'])) {
+//         $route = Route::get($val['path'], [PagesController::class, 'index']);
 
-        // Exclude documentation from auth middleware
-        if (!Str::contains($val['path'], 'documentation')) {
-            $route->middleware('auth');
-        }
-    }
-});
+//         // Exclude documentation from auth middleware
+//         if (!Str::contains($val['path'], 'documentation')) {
+//             $route->middleware('auth');
+//         }
+//     }
+// });
 
 // Documentations pages
-Route::prefix('documentation')->group(function () {
-    Route::get('getting-started/references', [ReferencesController::class, 'index']);
-    Route::get('getting-started/changelog', [PagesController::class, 'index']);
-});
 
-Route::middleware('auth')->group(function () {
-    // Account pages
-    Route::prefix('account')->group(function () {
-        Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
-        Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
-        Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
-        Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');
-    });
 
-    // Logs pages
-    Route::prefix('log')->name('log.')->group(function () {
-        Route::resource('system', SystemLogsController::class)->only(['index', 'destroy']);
-        Route::resource('audit', AuditLogsController::class)->only(['index', 'destroy']);
-    });
-});
 
 
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite
  */
-Route::get('/auth/redirect/{provider}', [SocialiteLoginController::class, 'redirect']);
 
-require __DIR__.'/auth.php';
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth']], static function () {
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('index');
+    Route::get('books/{book}/delete', [\App\Http\Controllers\BookController::class, 'delete'])->name('books.delete');
+    Route::resource('books', \App\Http\Controllers\BookController::class);
+    Route::get('teachers/{teacher}/delete', [\App\Http\Controllers\TeacherController::class, 'delete'])->name('teachers.delete');
+    Route::resource('teachers', \App\Http\Controllers\TeacherController::class);
+    Route::get('files/{file}/delete', [\App\Http\Controllers\RuaFileController::class, 'delete'])->name('files.delete');
+    Route::resource('files', \App\Http\Controllers\RuaFileController::class);
+
+    Route::get('courses/categories/{category}/delete', [\App\Http\Controllers\CourseCategoryController::class, 'delete'])->name('courses.categories.delete');
+    Route::resource('courses/categories', \App\Http\Controllers\CourseCategoryController::class ,['as' => 'courses']);
+    Route::get('courses/{course}/delete', [\App\Http\Controllers\CourseController::class, 'delete'])->name('courses.delete');
+    Route::resource('courses', \App\Http\Controllers\CourseController::class);
+    Route::get('courses/{course}/attachments/{attachment}/delete', [\App\Http\Controllers\CourseAttachmentController::class, 'delete'])->name('courses.attachments.delete');
+    Route::resource('courses/{course}/attachments', \App\Http\Controllers\CourseAttachmentController::class , ['as' => 'courses']);
+    Route::get('courses/{course}/lessons/{lesson}/delete', [\App\Http\Controllers\CourseLessonController::class, 'delete'])->name('courses.lessons.delete');
+    Route::resource('courses/{course}/lessons', \App\Http\Controllers\CourseLessonController::class , ['as' => 'courses']);
+    Route::prefix('account')->group(function () {
+        Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
+        Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
+        Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');
+    });
+});
+
+Route::get('/', [\App\Http\Controllers\LandingController::class, 'home'])->name('home');
+Route::get('books', [\App\Http\Controllers\BookController::class, '_index'])->name('books');
+Route::get('books/{book}', [\App\Http\Controllers\BookController::class, '_show'])->name('books.show');
+Route::get('files', [\App\Http\Controllers\RuaFileController::class, '_index'])->name('files');
+Route::get('files/{book}', [\App\Http\Controllers\RuaFileController::class, '_show'])->name('files.show');
+Route::get('courses/categories', [\App\Http\Controllers\CourseCategoryController::class, '_index'])->name('courses.categories');
+Route::get('courses/categories/{book}', [\App\Http\Controllers\CourseCategoryController::class, '_show'])->name('courses.categories.show');
+
+Route::get('courses', [\App\Http\Controllers\CourseController::class, '_index'])->name('courses');
+Route::get('courses/{book}', [\App\Http\Controllers\CourseController::class, '_show'])->name('courses.show');
+
+Route::get('about', [\App\Http\Controllers\LandingController::class, 'about'])->name('about');
+Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'])->name('contact');
+
+
+
+
+
+// require __DIR__.'/auth.php';
+
+Auth::routes();
+
