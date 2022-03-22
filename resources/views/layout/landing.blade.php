@@ -74,13 +74,13 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <a class="dropdown-item" href="Profile.html">
+                                            <a class="dropdown-item" href="{{ route('dashboard.profile') }}">
                                                 <i class="fa-thin fa-user"></i> البيانات الشخصية
 
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item selected" href="Courses.html">
+                                            <a class="dropdown-item selected" href="{{ route('dashboard.courses') }}">
 
                                                 <div class="selected-word">
                                                     <i class="fa-thin fa-circle-play"></i> الدورات
@@ -94,14 +94,14 @@
 
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="Settings.html">
+                                            <a class="dropdown-item" href="{{ route('dashboard.settings') }}">
                                                 <i class="fa-light fa-gear"></i> الاعدادات
                                             </a>
                                         </li>
 
                                         <br>
                                         <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-reload="true"">
+                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 <i class="fa-light fa-right-from-bracket"></i> الخروج
                                             </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

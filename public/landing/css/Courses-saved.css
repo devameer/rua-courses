@@ -12,7 +12,7 @@
 }
 
 .small-section-box.profile-small-box {
-    height: 50%;
+    height: auto;
 }
 
 .logout-box {

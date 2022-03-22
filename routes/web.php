@@ -86,6 +86,12 @@ Route::get('about', [\App\Http\Controllers\LandingController::class, 'about'])->
 Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'])->name('contact');
 
 
+Route::group(['as' => 'dashboard.', 'prefix' => 'dashboard', 'middleware' => ['auth']], static function () {
+    Route::get('profile', [\App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
+    Route::get('settings', [\App\Http\Controllers\DashboardController::class, 'settings'])->name('settings');
+    Route::get('courses', [\App\Http\Controllers\DashboardController::class, 'courses'])->name('courses');
+
+});
 
 
 
