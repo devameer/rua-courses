@@ -77,7 +77,7 @@ Route::get('books/{book}', [\App\Http\Controllers\BookController::class, '_show'
 Route::get('files', [\App\Http\Controllers\RuaFileController::class, '_index'])->name('files');
 Route::get('files/{book}', [\App\Http\Controllers\RuaFileController::class, '_show'])->name('files.show');
 Route::get('courses/categories', [\App\Http\Controllers\CourseCategoryController::class, '_index'])->name('courses.categories');
-Route::get('courses/categories/{book}', [\App\Http\Controllers\CourseCategoryController::class, '_show'])->name('courses.categories.show');
+Route::get('courses/categories/{category}', [\App\Http\Controllers\CourseCategoryController::class, '_show'])->name('courses.categories.show');
 
 Route::get('courses', [\App\Http\Controllers\CourseController::class, '_index'])->name('courses');
 Route::get('courses/{book}', [\App\Http\Controllers\CourseController::class, '_show'])->name('courses.show');

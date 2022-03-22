@@ -14,7 +14,7 @@
                     <span class="text-muted mt-1 fw-bold fs-7">جميع الملفات في الموقع</span>
                 </h3>
                 <div class="card-toolbar">
-                    <a href="#" class="btn btn-sm btn-light-primary">
+                    <a href="{{ route('admin.files.create') }}" class="btn btn-sm btn-light-primary">
                         {!! theme()->getSvgIcon("icons/duotone/Communication/Add-user.svg", "svg-icon-2") !!}
                        إضافة كتاب جديد
                     </a>

@@ -35,7 +35,7 @@
                         @include('admin.inc.inputImage', ['image' => $rua_file->image, 'name' => 'image'])
                     </div>
                 </div>
-                <div>
+                <div class="mb-10">
                     <label for="formFileLg" class="form-label">الملف</label>
                     <input class="form-control form-control-lg" id="formFileLg" type="file" name="file">
                 </div>

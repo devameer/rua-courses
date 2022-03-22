@@ -9,8 +9,9 @@ class CourseCategory extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'image'];
+
     public function courses()
     {
-        return $this->hasMany('App\Models\Course');
+        return $this->hasMany('App\Models\Course' , 'category_id');
     }
 }

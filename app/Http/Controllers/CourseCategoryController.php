@@ -70,7 +70,7 @@ class CourseCategoryController extends Controller
     public function _show(CourseCategory $category)
     {
         return view('landing.courses.categories.show', [
-            'categories' => CourseCategory::query()->orderBy('created_at', 'desc')->paginate(10)
+            'category' => $category
         ]);
     }
 
