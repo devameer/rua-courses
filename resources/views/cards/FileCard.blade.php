@@ -7,7 +7,7 @@
             <p class="book-info">
                {{ $file->description }} </p>
             <div class="download-box">
-                <a href="{{ asset($file->file) }} download="" class="download-link">
+                <a href="{{ asset($file->file) }}" download class="download-link">
                     تحميل
                     <img src="/landing/images/donwload.png" alt="">
                 </a>

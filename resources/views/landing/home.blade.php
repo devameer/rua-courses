@@ -106,9 +106,9 @@
                 @include('cards.FileCard' , ['file' => $file])
                 @endforeach
 
-          
+
             </div>
-            <div class="see-more-box"><a href="Files.html" class="see-more">عرض المزيد</a></div>
+            <div class="see-more-box"><a href="{{ route('files') }}" class="see-more">عرض المزيد</a></div>
         </div>
     </div>
     <!-- End Files Section  -->
