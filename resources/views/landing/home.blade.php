@@ -1,9 +1,9 @@
 @extends('layout.landing')
 @section('styles')
-<link rel="stylesheet" href="/landing/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/landing/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/landing/css/style.css">
-<link rel="stylesheet" href="/landing/css/rtl.css">
+<link rel="stylesheet" href="/landing/css/owl.carousel.min.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/owl.theme.default.min.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/style.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/rtl.css?ver{{rand(0 , 100)}}">
 @endsection
 @section('content')
     <!-- Start Main interface -->

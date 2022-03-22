@@ -1,9 +1,9 @@
 @extends('layout.landing')
-<link rel="stylesheet" href="/landing/css/style.css">
-<link rel="stylesheet" href="/landing/css/videos.css">
-<link rel="stylesheet" href="/landing/css/video-player.css">
-<link rel="stylesheet" href="/landing/css/video-player1-2.css">
-<link rel="stylesheet" href="/landing/css/rtl.css">
+<link rel="stylesheet" href="/landing/css/style.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/videos.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/video-player.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/video-player1-2.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/rtl.css?ver{{rand(0 , 100)}}">
 @section('content')
     <!-- Start SubNav -->
     <div class="sub-nav-bar">

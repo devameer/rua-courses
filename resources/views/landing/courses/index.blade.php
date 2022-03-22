@@ -1,6 +1,6 @@
 @extends('layout.landing')
 @section('styles')
-    <link rel="stylesheet" href="/landing/css/videos.css">
+    <link rel="stylesheet" href="/landing/css/videos.css?ver{{rand(0 , 100)}}">
 @endsection
 @section('content')
     <!-- Start SubNav -->

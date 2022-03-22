@@ -1,8 +1,8 @@
 @extends('layout.landing')
 @section('styles')
-<link rel="stylesheet" href="/landing/css/style.css">
-<link rel="stylesheet" href="/landing/css/videos.css">
-<link rel="stylesheet" href="/landing/css/rtl.css">@endsection
+<link rel="stylesheet" href="/landing/css/style.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/videos.css?ver{{rand(0 , 100)}}">
+<link rel="stylesheet" href="/landing/css/rtl.css?ver{{rand(0 , 100)}}">@endsection
 @section('content')
     <!-- Start SubNav -->
     <div class="sub-nav-bar">
