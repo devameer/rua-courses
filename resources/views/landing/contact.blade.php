@@ -1,7 +1,8 @@
 @extends('layout.landing')
 @section('styles')
-    <link rel="stylesheet" href="/landing/css/Contact-us.css">
-@endsection
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/Contact-us.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">@endsection
 @section('content')
     <!-- End Navbar -->
     <div class="sub-nav-bar">
@@ -12,7 +13,7 @@
                     <a class="nav-link active" href="Contact-us.html">تواصل معنا</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="index.html"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Contact-us.html">تواصل معنا</a>
                 </li>

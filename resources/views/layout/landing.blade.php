@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="/landing/css/normalize.css">
     <link rel="stylesheet" href="/landing/css/bootstrap.min.css">
     <link rel="stylesheet" href="/landing/css/all.min.css">
-    <link rel="stylesheet" href="/landing/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/landing/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/landing/css/style.css">
-    <link rel="stylesheet" href="/landing/css/rtl.css">
+
 
     <title>رؤى</title>
 

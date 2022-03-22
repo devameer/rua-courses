@@ -1,7 +1,8 @@
 @extends('layout.landing')
 @section('styles')
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">
 <link rel="stylesheet" href="/landing/css/Books.css">
-
 @endsection
 @section('content')
     <!-- Start SubNav -->
@@ -13,7 +14,7 @@
                     <a class="nav-link active" href="Files.html">الملفات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="index.html"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Files.html">الملفات</a>
                 </li>

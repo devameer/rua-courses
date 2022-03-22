@@ -1,6 +1,9 @@
 @extends('layout.landing')
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/videos.css">
 <link rel="stylesheet" href="/landing/css/video-player.css">
-    <link rel="stylesheet" href="/landing/css/video-player1-2.css">
+<link rel="stylesheet" href="/landing/css/video-player1-2.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">
 @section('content')
     <!-- Start SubNav -->
     <div class="sub-nav-bar">
@@ -11,7 +14,7 @@
                     <a class="nav-link active" href="Courses.html">الدورات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="index.html"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Courses.html">الدورات</a>
                 </li>
@@ -46,7 +49,7 @@
                                     </span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        تحميل ملفات الدورة
+                                            تحميل ملفات الدورة
                                         </span>
                                         <i class="fa-thin fa-file-lines"></i>
                                     </a>
@@ -55,7 +58,7 @@
                                     <span class="vid-time">55:00</span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        إنشاء هياكل ثلاثية الأبعاد
+                                            إنشاء هياكل ثلاثية الأبعاد
                                         </span>
                                         <i class="fa-thin fa-circle-play"></i>
                                     </a>
@@ -64,7 +67,7 @@
                                     <span class="vid-time">55:00</span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        إنشاء هياكل ثلاثية الأبعاد
+                                            إنشاء هياكل ثلاثية الأبعاد
                                         </span>
                                         <i class="fa-thin fa-circle-play"></i>
                                     </a>
@@ -73,7 +76,7 @@
                                     <span class="vid-time">55:00</span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        إنشاء هياكل ثلاثية الأبعاد
+                                            إنشاء هياكل ثلاثية الأبعاد
                                         </span>
                                         <i class="fa-thin fa-circle-play"></i>
                                     </a>
@@ -82,7 +85,7 @@
                                     <span class="vid-time">55:00</span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        إنشاء هياكل ثلاثية الأبعاد
+                                            إنشاء هياكل ثلاثية الأبعاد
                                         </span>
                                         <i class="fa-thin fa-circle-play"></i>
                                     </a>
@@ -91,7 +94,7 @@
                                     <span class="vid-time">55:00</span>
                                     <a href="">
                                         <span class="vid-disc">
-                                        إنشاء هياكل ثلاثية الأبعاد
+                                            إنشاء هياكل ثلاثية الأبعاد
                                         </span>
                                         <i class="fa-thin fa-circle-play"></i>
                                     </a>
@@ -133,8 +136,8 @@
                 </div>
                 <div class="video-player-row">
                     <div class="vid-player-box">
-                        {{ $course }}
-                        <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         {{-- <div class="blocked-access">
                             <div class="lock-vid">
                                 <img src="images/lock.png" alt="">
@@ -153,10 +156,12 @@
                     <div class="vid-player-course-content arabic-dir">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-regular fa-circle-info"></i>معلومات الدورة </button>
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                    aria-selected="true"><i class="fa-regular fa-circle-info"></i>معلومات الدورة </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-thin fa-file-lines"></i> المرفقات</button>
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false"><i class="fa-thin fa-file-lines"></i> المرفقات</button>
                             </li>
 
                         </ul>
@@ -204,9 +209,9 @@
                                         </div>
                                         <div class="download-box">
                                             <a href="#" class="download-link">
-                                        تحميل
-                                        <img src="/landing/images/donwload.png" alt="">
-                                    </a>
+                                                تحميل
+                                                <img src="/landing/images/donwload.png" alt="">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="download-container">
@@ -223,9 +228,9 @@
                                         </div>
                                         <div class="download-box">
                                             <a href="#" class="download-link">
-                                        تحميل
-                                        <img src="/landing/images/donwload.png" alt="">
-                                    </a>
+                                                تحميل
+                                                <img src="/landing/images/donwload.png" alt="">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

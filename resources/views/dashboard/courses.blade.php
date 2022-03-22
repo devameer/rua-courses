@@ -1,8 +1,11 @@
 @extends('layout.landing')
 @section('styles')
-    <link rel="stylesheet" href="/landing/css/Profile.css">
-    <link rel="stylesheet" href="/landing/css/videos.css">
-    <link rel="stylesheet" href="/landing/css/Courses-saved.css">
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/Profile.css">
+<link rel="stylesheet" href="/landing/css/videos.css">
+<link rel="stylesheet" href="/landing/css/Courses-saved.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">
+
 @endsection
 @section('content')
     <!-- Start SubNav -->

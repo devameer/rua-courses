@@ -1,7 +1,8 @@
 @extends('layout.landing')
 @section('styles')
-    <link rel="stylesheet" href="/landing/css/videos.css">
-@endsection
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/videos.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">@endsection
 @section('content')
     <!-- Start SubNav -->
     <div class="sub-nav-bar">
@@ -12,7 +13,7 @@
                     <a class="nav-link active" href="Courses.html">الدورات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="index.html"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Courses.html">الدورات</a>
                 </li>
@@ -28,7 +29,7 @@
         <div class="container">
             <div class="section-name-and-menu">
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         كل التخصصات
                     </a>
 

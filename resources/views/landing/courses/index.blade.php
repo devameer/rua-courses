@@ -12,7 +12,7 @@
                     <a class="nav-link active" href="Courses.html">الدورات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="index.html"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Courses.html">الدورات</a>
                 </li>

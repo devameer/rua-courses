@@ -1,4 +1,10 @@
 @extends('layout.landing')
+@section('styles')
+<link rel="stylesheet" href="/landing/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/landing/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/landing/css/style.css">
+<link rel="stylesheet" href="/landing/css/rtl.css">
+@endsection
 @section('content')
     <!-- Start Main interface -->
     <div class="main-inteface">
