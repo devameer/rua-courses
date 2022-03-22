@@ -60,6 +60,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth']], 
     Route::resource('courses/categories', \App\Http\Controllers\CourseCategoryController::class ,['as' => 'courses']);
     Route::get('courses/{course}/delete', [\App\Http\Controllers\CourseController::class, 'delete'])->name('courses.delete');
     Route::resource('courses', \App\Http\Controllers\CourseController::class);
+    Route::get('dublicate/{course}', [\App\Http\Controllers\CourseController::class, 'dublicate'])->name('courses.dublicate');
+
+
+
     Route::get('courses/{course}/attachments/{attachment}/delete', [\App\Http\Controllers\CourseAttachmentController::class, 'delete'])->name('courses.attachments.delete');
     Route::resource('courses/{course}/attachments', \App\Http\Controllers\CourseAttachmentController::class , ['as' => 'courses']);
     Route::get('courses/{course}/lessons/{lesson}/delete', [\App\Http\Controllers\CourseLessonController::class, 'delete'])->name('courses.lessons.delete');

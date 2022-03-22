@@ -39,4 +39,22 @@ class Course extends Model
             ->first();
     }
 
+    public function replicateRow()
+    {
+       $clone = $this->replicate();
+       $clone->push();
+
+       foreach($this->lessons as $lesson)
+       {
+           $clone->lessons()->create($lesson->toArray());
+       }
+       foreach($this->attachments as $attachment)
+       {
+           $clone->attachments()->create($attachment->toArray());
+       }
+
+
+       $clone->save();
+    }
+
 }

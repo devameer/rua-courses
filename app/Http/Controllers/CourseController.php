@@ -7,6 +7,7 @@ use App\Models\CourseCategory;
 use App\Models\Teacher;
 use App\Utils\EmptyClass;
 use App\Utils\UploadFiles;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -107,6 +108,14 @@ class CourseController extends Controller
         $categories = CourseCategory::all();
         $teachers = Teacher::all();
         return view('admin.courses.create', ['categories' => $categories , 'teachers' => $teachers ,'isCreating' => false, 'course' => $course]);
+    }
+    public function dublicate(Course $course)
+    {
+        $cat = Course::find($course->id);
+        $newCat = $cat->replicateRow();
+
+        dd($newCat);
+        return redirect(route('admin.courses.index'));
     }
 
     /**

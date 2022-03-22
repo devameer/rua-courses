@@ -57,6 +57,10 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <a href="{{ route('admin.courses.dublicate', $course) }}" class="btn btn-primary">dublicate</a>
+                                    </td>
+
+                                    <td>
                                         <a href="{{ route('admin.courses.attachments.index', $course) }}" class="btn btn-primary">المرفقات</a>
                                     </td>
                                     <td>
