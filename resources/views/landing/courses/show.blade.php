@@ -204,10 +204,10 @@
                                                     {{ $attachment->title }}
                                                 </p>
                                                 <p class="prog-info">
-                                                    ملف exe
+                                                    ملف {{ $attachment->extension }}
                                                 </p>
                                                 <p class="prog-info">
-                                                    500.0 MB
+                                                   {{$attachment->size}}
                                                 </p>
                                             </div>
                                             <div class="download-box">

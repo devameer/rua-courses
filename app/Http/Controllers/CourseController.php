@@ -114,7 +114,6 @@ class CourseController extends Controller
         $cat = Course::find($course->id);
         $newCat = $cat->replicateRow();
 
-        dd($newCat);
         return redirect(route('admin.courses.index'));
     }
 

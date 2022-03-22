@@ -51,9 +51,14 @@ class CourseAttachmentController extends Controller
 
         ]);
 
+
         $model = new CourseAttachment();
         if ($request->hasFile('file')) {
+            $file = $request->file('file');
+
             $model->file = UploadFiles::upload(UploaderController::TYPES['courses.attachments'], $request->file('file') );
+            $model->extension = $file->extension();
+            $model->size = $this->formatSizeUnits($file->getSize());
         }
 
 
@@ -104,8 +109,12 @@ class CourseAttachmentController extends Controller
         $updated = false;
 
         if ($request->hasFile('file')) {
+            $file = $request->file('file');
+
             UploadFiles::delete(UploaderController::TYPES['courses.attachments'], $attachment->file);
             $attachment->file = UploadFiles::upload(UploaderController::TYPES['courses.attachments'], $request->file('file') );
+            $attachment->extension = $file->extension();
+            $attachment->size = $this->formatSizeUnits($file->getSize());
             $updated = true;
         }
         if ($request->has('title') && $request->input('title') != null && $attachment->title != $request->input('title')) {
@@ -134,4 +143,34 @@ class CourseAttachmentController extends Controller
         $attachment->delete();
         return redirect(route('admin.courses.attachments.index' , $course));
     }
+
+    public function formatSizeUnits($bytes)
+    {
+        if ($bytes >= 1073741824)
+        {
+            $bytes = number_format($bytes / 1073741824, 2) . ' GB';
+        }
+        elseif ($bytes >= 1048576)
+        {
+            $bytes = number_format($bytes / 1048576, 2) . ' MB';
+        }
+        elseif ($bytes >= 1024)
+        {
+            $bytes = number_format($bytes / 1024, 2) . ' KB';
+        }
+        elseif ($bytes > 1)
+        {
+            $bytes = $bytes . ' bytes';
+        }
+        elseif ($bytes == 1)
+        {
+            $bytes = $bytes . ' byte';
+        }
+        else
+        {
+            $bytes = '0 bytes';
+        }
+
+        return $bytes;
+}
 }
