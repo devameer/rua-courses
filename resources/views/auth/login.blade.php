@@ -32,13 +32,13 @@
             @enderror
             </div>
             <div class="forget-password-box">
-                <a href="Forget-password.html">نسيت كلمة الرور؟</a>
+                <a href="{{ route('password.request') }}">نسيت كلمة الرور؟</a>
             </div>
             <div class="login-link send-message-link share-linke margin-fit-link">
                 <button class="share btn">تسجيل الدخول</butt>
             </div>
             <div class="creat-account-link send-message-link share-linke">
-                <a href="Sign-up.html" class="share">إنشاء حساب</a>
+                <a href="{{ route('register') }}" class="share">إنشاء حساب</a>
             </div>
         </form>
 
