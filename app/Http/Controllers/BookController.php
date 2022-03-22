@@ -52,7 +52,7 @@ class BookController extends Controller
             'description' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,gif'],
-            'file' => ['nullable', 'image', 'mimes:png,jpg,jpeg,gif'],
+            'file' => ['nullable', 'file'],
         ]);
 
         $model = new Book();
@@ -107,7 +107,7 @@ class BookController extends Controller
             'description' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,gif'],
-            'file' => ['nullable', 'image', 'mimes:png,jpg,jpeg,gif'],
+            'file' => ['nullable', 'file'],
         ]);
 
         $updated = false;

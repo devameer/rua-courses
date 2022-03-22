@@ -47,7 +47,7 @@ class CourseAttachmentController extends Controller
     {
         $this->validate($request, [
             'title' => ['required', 'string', 'min:3', 'max:255'],
-            'file' => ['nullable'],
+            'file' => ['nullable', 'file'],
 
         ]);
 
