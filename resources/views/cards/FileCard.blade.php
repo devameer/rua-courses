@@ -1,13 +1,13 @@
 <div class="file-bar">
     <div class="file-box">
-        <img src="/landing/images/documents.png" alt="Book">
+        <img src="{{ $file->image ?? 'landing/images/documents.png' }}" alt="Book">
         <div class="box-discreption">
             <p class="file-name">
-                1اسم الملف </p>
+               {{ $file->name }} </p>
             <p class="book-info">
-                وصف الملف يضاف هنا </p>
+               {{ $file->description }} </p>
             <div class="download-box">
-                <a href="#" class="download-link">
+                <a href="{{ asset($file->file) }} download="" class="download-link">
                     تحميل
                     <img src="/landing/images/donwload.png" alt="">
                 </a>

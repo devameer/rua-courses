@@ -1,18 +1,18 @@
 <div class="book-bar">
-    <a  href="{{ route('books.show' , 2) }}" class="test">
+    <a  href="{{ route('books.show' , $book) }}" class="test">
         <div class="book-box ">
-            <img src="/landing/images/book.png" alt="Book">
+            <img src="{{ asset($book->image ?? 'landing/images/book.png') }}" alt="Book">
         </div>
     </a>
     <div class="box-discreption text-algin-rtl">
         <p class="book-name">
-            2اسم الكتاب
+           {{ $book->name }}
         </p>
         <p class="book-info">
-            تفاصيل بسيطة عن الكتاب تضاف هنا
+            {{ $book->content }}
         </p>
         <p class="data">
-            2022/01/01 <i class="fa-regular fa-calendar-days"></i>
+            {{ date('M d, Y' , strtotime($book->created_at)) }} <i class="fa-regular fa-calendar-days"></i>
         </p>
     </div>
 </div>

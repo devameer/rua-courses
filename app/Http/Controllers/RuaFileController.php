@@ -36,7 +36,7 @@ class RuaFileController extends Controller
      */
     public function create()
     {
-        return view('admin.rua_files.create', ['isCreating' => true, 'rua_file' => new EmptyClass(old())]);
+        return view('admin.files.create', ['isCreating' => true, 'rua_file' => new EmptyClass(old())]);
     }
 
     /**

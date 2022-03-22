@@ -1,7 +1,5 @@
 <x-base-layout>
-    @section('styles')
-        @include('admin.inc.editor', ['type' => $rua_file, 'scripts' => false, 'styles' => true])
-    @endsection
+
     <div class="card">
         <!--begin::Header-->
         <div class="card-header border-0 pt-5">
@@ -26,20 +24,10 @@
                     <input type="text" class="form-control form-control-solid" name="name" value="{{ $rua_file->name }}" placeholder="إسم الملف">
                 </div>
                 <div class="form-label-group mb-10">
-                    <label for="description" style="vertical-align: top;">وصف الملف</label>
+                    <label for="description" class="mb-5">وصف الملف</label>
                     {{-- <div class="editor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quidem omnis consectetur quo, consequatur labore laborum voluptas excepturi minus quas natus animi sit exercitationem sequi quos impedit vero minima dignissimos!</div> --}}
-                    <textarea id="description" name="description" data-length="1000" class="form-control d-none char-textarea" rows="3" placeholder="Description">{{ $rua_file->description }}</textarea>
+                    <textarea id="description" name="description"  data-length="1000" class="form-control char-textarea" rows="3" placeholder="الوصف">{{ $rua_file->description }}</textarea>
 
-                    <section dir="ltr" class="description-full-editor">
-                        <div class="card">
-                                        <div id="description-full-wrapper">
-                                            <div id="description-full-container">
-                                                <div class="editor">
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                    </section>
 
                 </div>
                 <div class="mb-10"><label class="form-label mb-5">صورة الملف</label>
@@ -60,8 +48,6 @@
         </div>
     </div>
 
-    @section('scripts')
-        @include('admin.inc.editor', ['type' => $rua_file, 'scripts' => true, 'styles' => false, 'fields' => ['description']])
-    @endsection
+
 
 </x-base-layout>
