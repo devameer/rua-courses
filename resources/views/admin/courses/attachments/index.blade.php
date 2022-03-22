@@ -39,7 +39,7 @@
                         <!--end::Table head-->
                         <!--begin::Table body-->
                         <tbody>
-                            @foreach($attachments as $attachment)
+                            @foreach($course->attachments as $attachment)
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center">

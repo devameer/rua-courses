@@ -24,7 +24,7 @@ class CourseAttachmentController extends Controller
 
     public function index(Course $course)
     {
-        return view('admin.courses.attachments.index', ['course' => $course ,'attachments' => CourseAttachment::query()->paginate(15)]);
+        return view('admin.courses.attachments.index', ['course' => $course]);
     }
 
     /**

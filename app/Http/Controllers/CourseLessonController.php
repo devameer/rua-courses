@@ -15,10 +15,10 @@ class CourseLessonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function _index()
+    public function _index(Course $course)
     {
         return view('landing.lessons.index', [
-            'lessons' => CourseLesson::query()->orderBy('created_at', 'desc')->paginate(10)
+            'course' => $course
         ]);
     }
 

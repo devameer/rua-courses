@@ -39,7 +39,7 @@
                         <!--end::Table head-->
                         <!--begin::Table body-->
                         <tbody>
-                            @foreach($lessons as $lesson)
+                            @foreach($course->lessons as $lesson)
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center">

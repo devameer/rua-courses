@@ -75,7 +75,7 @@
                             <i class="fa-thin fa-user"></i> البيانات الشخصية
                         </li>
                     </a>
-                    <a href="{{ route('dashboard.courses') }}>
+                    <a href="{{ route('dashboard.courses') }}">
                         <li>
                             <i class="fa-thin fa-circle-play"></i> الدورات
                         </li>
