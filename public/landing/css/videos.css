@@ -97,9 +97,9 @@
     display: none;
 }
 
-.videos-container .card:hover .card-img-top {
+/* .videos-container .card:hover .card-img-top {
     display: none;
-}
+} */
 
 .videos-container .card:hover .second-card-img-top {
     display: block;

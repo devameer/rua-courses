@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable 
+class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     use HasRoles;
@@ -79,9 +79,9 @@ class User extends Authenticatable
     }
 
 
-    public function courses()
+    public function favorites()
     {
-        return $this->belongsToMany('App\Models\Course', 'users_courses', 'user_id', 'course_id');
+        return $this->belongsToMany('App\Models\Course', 'favorites', 'user_id', 'course_id')->withTimeStamps();
     }
 
     public function isAdmin(): bool

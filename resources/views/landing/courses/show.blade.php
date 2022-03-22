@@ -42,6 +42,7 @@
                                     26:04:37
                                 </span> --}}
                             </div>
+
                             <ul class="videos-list list-unstyled">
                                 {{-- <li class="active-coures-file">
                                     <span class="vid-time">
@@ -55,10 +56,10 @@
                                     </a>
                                 </li> --}}
                                 <li class="d-none"></li>
-                                @foreach ($course->lessons as $lesson)
+                                @foreach ($course->lessons as $key=> $lesson)
                                     <li>
                                         <span class="vid-time">55:00</span>
-                                        <a href="">
+                                        <a   data-vid="{{ $lesson->video }}">
                                             <span class="vid-disc">
                                                 {{ $lesson->title }}
                                             </span>
@@ -110,8 +111,33 @@
                 <div class="video-player-row">
                     <div class="vid-player-box">
                         @if (auth()->check())
-                            <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0"
+                            @if($course->favorited())
+                            <iframe src="https://www.youtube.com/embed/{{ $first_video }}" title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                                {{-- <a href="{{route('unFavoriteCourse' , $course->id)}}">
+                                    <i class="far fa-heart"></i>
+                                    <span>إزالة من المفضلة</span>
+                                </a> --}}
+
+                            @else
+                            <div class="blocked-access">
+                                <div class="lock-vid">
+                                    <img src="/landing/images/lock.png" alt="">
+                                </div>
+                                <p class="lock-title">
+                                    لا يمكن عرض الفيديو
+                                </p>
+                                <p class="lock-explane">
+                                    لا يمكن عرض الفيديو الخاص بهذه الدورة ، الرجاء الاشتراك أولا.
+                                </p>
+                                <div class="sign-now">
+                                    <a href="{{route('favoriteCourse' , $course->id)}}">الإشتراك في الدورة</a>
+                                </div>
+                            </div>
+
+                            @endif
+
+
                         @else
                             <div class="blocked-access">
                                 <div class="lock-vid">

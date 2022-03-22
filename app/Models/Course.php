@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Course extends Model
 {
@@ -29,7 +30,13 @@ class Course extends Model
     }
     public function users()
     {
-        return $this->belongsToMany('App\Models\User', 'users_courses', 'course_id', 'user_id');
+        return $this->belongsToMany('App\Models\User', 'favorites', 'course_id', 'user_id');
+    }
+    public function favorited()
+    {
+        return (bool)Favorite::where('user_id', Auth::id())
+            ->where('course_id', $this->id)
+            ->first();
     }
 
 }

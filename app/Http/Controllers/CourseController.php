@@ -8,6 +8,8 @@ use App\Models\Teacher;
 use App\Utils\EmptyClass;
 use App\Utils\UploadFiles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CourseController extends Controller
 {
@@ -24,7 +26,14 @@ class CourseController extends Controller
     }
     public function _show(Course $course)
     {
-        return view('landing.courses.show', ['course' => $course, 'latestBooks' => Course::query()->where('id', '!=', $course->id)->orderBy('created_at', 'desc')->limit(5)->get()->all()]);
+        $first_lesson = $course->lessons->first();
+        if($first_lesson){
+            $first_video = $first_lesson->video;
+
+        }else{
+            $first_video = null;
+        }
+        return view('landing.courses.show', ['first_video' => $first_video , 'course' => $course, 'latestBooks' => Course::query()->where('id', '!=', $course->id)->orderBy('created_at', 'desc')->limit(5)->get()->all()]);
     }
     public function index()
     {
@@ -164,6 +173,21 @@ class CourseController extends Controller
 
         $course->delete();
         return redirect(route('admin.courses.index'));
+    }
+
+    public function favoriteCourse(Course $course)
+    {
+        Auth::user()->favorites()->attach($course->id);
+//        Auth::user()->favorites()->attach($post->id);
+        return back()->with(['success' => 'تم الإضافة إلى المفضلة بنجاح']);
+
+    }
+
+    public function unFavoriteCourse(Course $course)
+    {
+        Auth::user()->favorites()->detach($course->id);
+
+        return back()->with(['success' => 'تم الحذف من المفضلة بنجاح']);
     }
 }
 

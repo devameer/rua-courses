@@ -283,7 +283,12 @@
                     }
                 }
             })
+            $('.video-player-section .vid-player-small-col .videos-titles-cornar .videos-list li a').on('click' , function(e){
+                const vid = $(this).data('vid');
 
+                $('.vid-player-box iframe').attr('src' ,'https://www.youtube.com/embed/' + vid )
+
+            });
         });
     </script>
 </body>

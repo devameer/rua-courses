@@ -44,7 +44,6 @@
                             @foreach($teachers as $teacher)
                                 <tr>
                                     <td>
-                                        {{ $teacher->image }}
                                         <div class="d-flex align-items-center">
                                             <div class="symbol symbol-50px me-5">
                                                 <img src="{{ asset($teacher->image) }}" class="" alt=""/>

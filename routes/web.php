@@ -3,6 +3,7 @@
 use App\Http\Controllers\Account\SettingsController;
 use App\Http\Controllers\Auth\SocialiteLoginController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Documentation\ReferencesController;
 use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
@@ -84,7 +85,8 @@ Route::get('courses/{course}', [\App\Http\Controllers\CourseController::class, '
 
 Route::get('about', [\App\Http\Controllers\LandingController::class, 'about'])->name('about');
 Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'])->name('contact');
-
+Route::get('favorite/{course}', [CourseController::class, 'favoriteCourse'])->name('favoriteCourse');
+Route::get('unfavorite/{course}', [CourseController::class, 'unFavoriteCourse'])->name('unFavoriteCourse');
 
 Route::group(['as' => 'dashboard.', 'prefix' => 'dashboard', 'middleware' => ['auth']], static function () {
     Route::get('profile', [\App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
