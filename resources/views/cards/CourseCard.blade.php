@@ -1,5 +1,5 @@
 <div class="card">
-    <a href="video-player1-2.html">
+    <a href="{{ route('courses.show' , $course) }}">
         <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
         <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
         <div class="card-body ">

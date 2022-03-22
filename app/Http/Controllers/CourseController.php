@@ -159,7 +159,8 @@ class CourseController extends Controller
     public function destroy(Course $course)
     {
         UploadFiles::delete(UploaderController::TYPES['courses.image'], $course->image);
-        UploadFiles::delete(UploaderController::TYPES['courses.file'], $course->file);
+        $course->attachments->each->delete();
+        $course->lessons->each->delete();
 
         $course->delete();
         return redirect(route('admin.courses.index'));

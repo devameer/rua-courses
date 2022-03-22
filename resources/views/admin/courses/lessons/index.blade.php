@@ -48,7 +48,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $lesson->name }}</a>
+                                                <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $lesson->title }}</a>
                                                 {{-- <span class="text-muted fw-bold text-muted d-block fs-7">{{ $row['product']['specs'] }}</span> --}}
                                             </div>
                                         </div>

@@ -80,7 +80,7 @@ Route::get('courses/categories', [\App\Http\Controllers\CourseCategoryController
 Route::get('courses/categories/{category}', [\App\Http\Controllers\CourseCategoryController::class, '_show'])->name('courses.categories.show');
 
 Route::get('courses', [\App\Http\Controllers\CourseController::class, '_index'])->name('courses');
-Route::get('courses/{book}', [\App\Http\Controllers\CourseController::class, '_show'])->name('courses.show');
+Route::get('courses/{course}', [\App\Http\Controllers\CourseController::class, '_show'])->name('courses.show');
 
 Route::get('about', [\App\Http\Controllers\LandingController::class, 'about'])->name('about');
 Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'])->name('contact');

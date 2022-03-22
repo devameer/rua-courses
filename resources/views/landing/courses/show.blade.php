@@ -1,6 +1,6 @@
 @extends('layout.landing')
-<link rel="stylesheet" href="css/video-player.css">
-    <link rel="stylesheet" href="css/video-player1-2.css">
+<link rel="stylesheet" href="/landing/css/video-player.css">
+    <link rel="stylesheet" href="/landing/css/video-player1-2.css">
 @section('content')
     <!-- Start SubNav -->
     <div class="sub-nav-bar">
@@ -133,7 +133,8 @@
                 </div>
                 <div class="video-player-row">
                     <div class="vid-player-box">
-                        <iframe src="https://www.youtube-nocookie.com/embed/POMy7NQm5SA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        {{ $course }}
+                        <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         {{-- <div class="blocked-access">
                             <div class="lock-vid">
                                 <img src="images/lock.png" alt="">
@@ -166,11 +167,10 @@
                                         معلومات الدورة
                                     </p>
                                     <p class="course-ifon-text">
-                                        برنامج الفوتوشوب برنامج متخصص بتصميم وبرمجة مواقع الإنترنت أيضا تصميم الابليكشن للأجهزة الذكية، ميزة البرنامج استخدام أدوات التصميم من دون الرجوع لكتابة الكود بحال أنك مصمم، وأيضا المبرمجين بإمكانهم كتابة الكود أيضا، والبرنامج يتكفل بتحويل الكود إلى تصميم
-                                        والعكس صحيح
+                                        {{ $course->description }}
                                     </p>
                                 </div>
-                                <div class="course-information-box">
+                                {{-- <div class="course-information-box">
                                     <p class="course-info-title">
                                         الشهادة
                                     </p>
@@ -183,7 +183,7 @@
                                         الشهادة<span>7</span>
                                     </p>
 
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                 <div class="course-information-box">

@@ -208,8 +208,8 @@
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: #7d1935;
-    background-color: transparent;
+    color: #7d1935 !important;
+    background-color: transparent  !important;
     font-weight: bold;
     text-align: center;
     position: relative;

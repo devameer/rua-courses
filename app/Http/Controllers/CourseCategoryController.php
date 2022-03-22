@@ -131,11 +131,13 @@ class CourseCategoryController extends Controller
      */
     public function delete(CourseCategory $category)
     {
-        return view('admin.courses.categories.delete', ['teacher' => $category]);
+        return view('admin.courses.categories.delete', ['category' => $category]);
     }
     public function destroy(CourseCategory $category)
     {
         UploadFiles::delete(UploaderController::TYPES['courses.categories'], $category->image);
+        $category->courses->each->delete();
+
         $category->delete();
         return redirect(route('admin.courses.categories.index'));
     }
