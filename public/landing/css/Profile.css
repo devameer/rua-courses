@@ -45,7 +45,12 @@
 .center-profile-img-box {
     margin-bottom: 40px;
 }
-
+.center-profile-img-box label > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .edit-img {
     color: #615d5d;
     font-size: 14px;

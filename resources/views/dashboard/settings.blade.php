@@ -68,7 +68,7 @@
             <div class="small-section-box profile-small-box">
                 <div class="profile-img-info">
                     <img class="profile-img" src="images/profile.png" alt="user img">
-                    <p class="edit-img">تحديث الصورة</p>
+                    {{-- <p class="edit-img">تحديث الصورة</p> --}}
                     <p class="profile-name">محمد عبداللّه</p>
                 </div>
                 <ul class="move-list-links arabic-dir list-unstyled">

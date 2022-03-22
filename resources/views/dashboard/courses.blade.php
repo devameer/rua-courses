@@ -1,11 +1,10 @@
 @extends('layout.landing')
 @section('styles')
-<link rel="stylesheet" href="/landing/css/style.css">
-<link rel="stylesheet" href="/landing/css/Profile.css">
-<link rel="stylesheet" href="/landing/css/videos.css">
-<link rel="stylesheet" href="/landing/css/Courses-saved.css">
-<link rel="stylesheet" href="/landing/css/rtl.css">
-
+    <link rel="stylesheet" href="/landing/css/style.css">
+    <link rel="stylesheet" href="/landing/css/Profile.css">
+    <link rel="stylesheet" href="/landing/css/videos.css">
+    <link rel="stylesheet" href="/landing/css/Courses-saved.css">
+    <link rel="stylesheet" href="/landing/css/rtl.css">
 @endsection
 @section('content')
     <!-- Start SubNav -->
@@ -27,52 +26,16 @@
                         </p>
                     </div>
                     <div class="videos-container">
-                        <div class="card">
-                            <a href="video-player1-2.html">
-                                <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                                <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                                    <p class="card-text ">عبد الله الجابري</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="video-player1-2.html">
-                                <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                                <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                                    <p class="card-text ">عبد الله الجابري</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="video-player1-2.html">
-                                <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                                <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                                    <p class="card-text ">عبد الله الجابري</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="video-player1-2.html">
-                                <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                                <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                                    <p class="card-text ">عبد الله الجابري</p>
-                                </div>
-                            </a>
-                        </div>
+                        @foreach (Auth::user()->favorites as $course)
+                            @include('cards.CourseCard', ['course' => $course])
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="small-section-box profile-small-box">
                     <div class="profile-img-info">
                         <img class="profile-img" src="/landing/images/profile.png" alt="user img">
-                        <p class="edit-img">تحديث الصورة</p>
+                        {{-- <p class="edit-img">تحديث الصورة</p> --}}
                         <p class="profile-name">محمد عبداللّه</p>
                     </div>
                     <ul class="move-list-links arabic-dir list-unstyled">

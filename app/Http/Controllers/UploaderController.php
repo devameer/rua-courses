@@ -17,6 +17,8 @@ class UploaderController extends Controller
         'courses.attachments' => 'uploads'.DIRECTORY_SEPARATOR.'courses'.DIRECTORY_SEPARATOR.'attachments',
         'courses.categories' => 'uploads'.DIRECTORY_SEPARATOR.'courses'.DIRECTORY_SEPARATOR.'categories',
         'teachers' => 'uploads'.DIRECTORY_SEPARATOR.'teachers',
+        'users' => 'uploads'.DIRECTORY_SEPARATOR.'users',
+
     );
     public function upload(Request $request, string $type){
         $validator = Validator::make($request->all(), [

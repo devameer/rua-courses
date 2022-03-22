@@ -141,7 +141,7 @@
                         @else
                             <div class="blocked-access">
                                 <div class="lock-vid">
-                                    <img src="images/lock.png" alt="">
+                                    <img src="/landing/images/lock.png" alt="">
                                 </div>
                                 <p class="lock-title">
                                     لا يمكن عرض الفيديو
@@ -150,7 +150,7 @@
                                     لا يمكن عرض الفيديو الخاص بهذه الدورة ، الرجاء الاشتراك أولا.
                                 </p>
                                 <div class="sign-now">
-                                    <a href="#">سجل الأن</a>
+                                    <a href="{{ route('register') }}">سجل الأن</a>
                                 </div>
                             </div>
                         @endif

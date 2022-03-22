@@ -88,6 +88,9 @@ Route::get('contact', [\App\Http\Controllers\LandingController::class, 'contact'
 Route::get('favorite/{course}', [CourseController::class, 'favoriteCourse'])->name('favoriteCourse');
 Route::get('unfavorite/{course}', [CourseController::class, 'unFavoriteCourse'])->name('unFavoriteCourse');
 
+Route::put('user/settings', [\App\Http\Controllers\DashboardController::class, 'user_settings'])->name('user.settings');
+
+
 Route::group(['as' => 'dashboard.', 'prefix' => 'dashboard', 'middleware' => ['auth']], static function () {
     Route::get('profile', [\App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');
     Route::get('settings', [\App\Http\Controllers\DashboardController::class, 'settings'])->name('settings');
