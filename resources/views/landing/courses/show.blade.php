@@ -14,7 +14,7 @@
                     <a class="nav-link active" href="Courses.html">الدورات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{ route('home') }}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Courses.html">الدورات</a>
                 </li>
@@ -36,14 +36,14 @@
                                     أساسيات في التصميم الجرافيكي
                                 </p>
                                 <span class="coures-count">
-                                    الدروس(26)
+                                    الدروس({{ $course->lessons->count() }})
                                 </span>
                                 <span class="total-coures-time">
                                     26:04:37
                                 </span>
                             </div>
                             <ul class="videos-list list-unstyled">
-                                <li class="active-coures-file">
+                                {{-- <li class="active-coures-file">
                                     <span class="vid-time">
                                         <i class="fa-thin fa-download"></i>
                                     </span>
@@ -53,69 +53,42 @@
                                         </span>
                                         <i class="fa-thin fa-file-lines"></i>
                                     </a>
-                                </li>
-                                <li>
-                                    <span class="vid-time">55:00</span>
-                                    <a href="">
-                                        <span class="vid-disc">
-                                            إنشاء هياكل ثلاثية الأبعاد
-                                        </span>
-                                        <i class="fa-thin fa-circle-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="vid-time">55:00</span>
-                                    <a href="">
-                                        <span class="vid-disc">
-                                            إنشاء هياكل ثلاثية الأبعاد
-                                        </span>
-                                        <i class="fa-thin fa-circle-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="vid-time">55:00</span>
-                                    <a href="">
-                                        <span class="vid-disc">
-                                            إنشاء هياكل ثلاثية الأبعاد
-                                        </span>
-                                        <i class="fa-thin fa-circle-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="vid-time">55:00</span>
-                                    <a href="">
-                                        <span class="vid-disc">
-                                            إنشاء هياكل ثلاثية الأبعاد
-                                        </span>
-                                        <i class="fa-thin fa-circle-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span class="vid-time">55:00</span>
-                                    <a href="">
-                                        <span class="vid-disc">
-                                            إنشاء هياكل ثلاثية الأبعاد
-                                        </span>
-                                        <i class="fa-thin fa-circle-play"></i>
-                                    </a>
-                                </li>
+                                </li> --}}
+                                <li class="d-none"></li>
+                                @foreach ($course->lessons as $lesson)
+                                    <li>
+                                        <span class="vid-time">55:00</span>
+                                        <a href="">
+                                            <span class="vid-disc">
+                                                {{ $lesson->title }}
+                                            </span>
+                                            <i class="fa-thin fa-circle-play"></i>
+                                        </a>
+                                    </li>
+                                @endforeach
+
+
                             </ul>
                         </div>
                     </div>
                     <div class="vid-player-small-col">
+                        @if ($course->teacher)
+
+
                         <div class="trainers-box">
                             <p class="trainers-title">
                                 المدربين
                             </p>
                             <div class="trainers-info-and-img">
                                 <div class="trainer-info">
-                                    <p class="trainer-name">عبد الجابري</p>
-                                    <p class="trainer-job">خبير و مدرب تصميم</p>
+                                    <p class="trainer-name">{{ $course->teacher->name }}</p>
+                                    <p class="trainer-job">{{ $course->teacher->job_title }}</p>
                                 </div>
-                                <img src="/landing/images/trainer.png" alt="trainer img">
+                                <img src="{{ asset($course->teacher->image) }}" width="40px" alt="trainer img">
 
                             </div>
                         </div>
+                        @endif
                         <div class="share-course-box">
                             <p class="share-course">
                                 شارك
@@ -136,22 +109,25 @@
                 </div>
                 <div class="video-player-row">
                     <div class="vid-player-box">
-                        <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        {{-- <div class="blocked-access">
-                            <div class="lock-vid">
-                                <img src="images/lock.png" alt="">
+                        @if (auth()->check())
+                            <iframe src="{{ $course->video }}" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        @else
+                            <div class="blocked-access">
+                                <div class="lock-vid">
+                                    <img src="images/lock.png" alt="">
+                                </div>
+                                <p class="lock-title">
+                                    لا يمكن عرض الفيديو
+                                </p>
+                                <p class="lock-explane">
+                                    لا يمكن عرض الفيديو الخاص بهذه الدورة ، الرجاء الاشتراك أولا.
+                                </p>
+                                <div class="sign-now">
+                                    <a href="#">سجل الأن</a>
+                                </div>
                             </div>
-                            <p class="lock-title">
-                                لا يمكن عرض الفيديو
-                            </p>
-                            <p class="lock-explane">
-                                لا يمكن عرض الفيديو الخاص بهذه الدورة ، الرجاء الاشتراك أولا.
-                            </p>
-                            <div class="sign-now">
-                                <a href="#">سجل الأن</a>
-                            </div>
-                        </div> --}}
+                        @endif
                     </div>
                     <div class="vid-player-course-content arabic-dir">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -172,7 +148,7 @@
                                         معلومات الدورة
                                     </p>
                                     <p class="course-ifon-text">
-                                        {{ $course->description }}
+                                        {!! $course->description !!}
                                     </p>
                                 </div>
                                 {{-- <div class="course-information-box">
@@ -195,44 +171,29 @@
                                     <p class="course-info-title">
                                         الملفات
                                     </p>
-                                    <div class="download-container">
-                                        <div class="download-info">
-                                            <p class="down-explanation">
-                                                رابط تحميل البرنامج
-                                            </p>
-                                            <p class="prog-info">
-                                                ملف exe
-                                            </p>
-                                            <p class="prog-info">
-                                                500.0 MB
-                                            </p>
+                                    @foreach ($course->attachments as $attachment)
+                                        <div class="download-container">
+                                            <div class="download-info">
+                                                <p class="down-explanation">
+                                                    {{ $attachment->title }}
+                                                </p>
+                                                <p class="prog-info">
+                                                    ملف exe
+                                                </p>
+                                                <p class="prog-info">
+                                                    500.0 MB
+                                                </p>
+                                            </div>
+                                            <div class="download-box">
+                                                <a href="{{ asset($attachment->file) }}" download class="download-link">
+                                                    تحميل
+                                                    <img src="/landing/images/donwload.png" alt="">
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="download-box">
-                                            <a href="#" class="download-link">
-                                                تحميل
-                                                <img src="/landing/images/donwload.png" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="download-container">
-                                        <div class="download-info">
-                                            <p class="down-explanation">
-                                                رابط تحميل البرنامج
-                                            </p>
-                                            <p class="prog-info">
-                                                ملف exe
-                                            </p>
-                                            <p class="prog-info">
-                                                500.0 MB
-                                            </p>
-                                        </div>
-                                        <div class="download-box">
-                                            <a href="#" class="download-link">
-                                                تحميل
-                                                <img src="/landing/images/donwload.png" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
+
                                 </div>
                             </div>
 
