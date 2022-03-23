@@ -1,6 +1,8 @@
 @extends('layout.landing')
 @section('styles')
-    <link rel="stylesheet" href="/landing/css/videos.css?ver{{rand(0 , 100)}}">
+    <link rel="stylesheet" href="/landing/css/style.css?ver{{ rand(0, 100) }}">
+    <link rel="stylesheet" href="/landing/css/videos.css?ver{{ rand(0, 100) }}">
+    <link rel="stylesheet" href="/landing/css/rtl.css?ver{{ rand(0, 100) }}">
 @endsection
 @section('content')
     <!-- Start SubNav -->
@@ -12,7 +14,7 @@
                     <a class="nav-link active" href="Courses.html">الدورات</a>
                 </li>
                 <li class="nav-item home-and-owner">
-                    <a class="nav-link" href="{{route('home')}}"><img src="/landing/images/Home.png">الرئيسية</a>
+                    <a class="nav-link" href="{{ route('home') }}"><img src="/landing/images/Home.png">الرئيسية</a>
                     /
                     <a class="nav-link" href="Courses.html">الدورات</a>
                 </li>
@@ -38,109 +40,30 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
-                <p class="section-title">
-                    الدورات
-                </p>
+                @if ($is_search)
+                    <p class="section-title">
+                        نتائج البحث عن
+                      {{ $query }}
+                    </p>
+                @else
+                    <p class="section-title">
+                        جميع الدورات
+                    </p>
+                @endif
+
             </div>
 
 
             <div class="videos-container">
 
+                @foreach ($courses as $course)
+                    @include('cards.CourseCard', ['course' => $course])
+                @endforeach
 
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="video-player1-2.html">
-                        <img class="card-img-top" src="/landing/images/UI-UX-From-Scratch.png">
-                        <img class="second-card-img-top" src="/landing/images/ux-ui-design.png">
-                        <div class="card-body ">
-                            <h5 class="card-title ">Adobe photoshop | أدوبي فوتوشوب</h5>
-                            <p class="card-text ">عبد الله الجابري</p>
-                        </div>
-                    </a>
-                </div>
 
             </div>
 
-            <div class="see-more-box "><a href="# " class="see-more ">عرض المزيد</a></div>
+            {{-- <div class="see-more-box "><a href="# " class="see-more ">عرض المزيد</a></div> --}}
         </div>
     </div>
     <!-- End Video Page Section  -->

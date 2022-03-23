@@ -22,7 +22,8 @@ class CourseController extends Controller
     public function _index()
     {
         return view('landing.courses.index', [
-            'courses' => Course::query()->orderBy('created_at', 'desc')->paginate(10)
+            'courses' => Course::query()->orderBy('created_at', 'desc')->paginate(10) 
+            , 'is_search' => false
         ]);
     }
     public function _show(Course $course)

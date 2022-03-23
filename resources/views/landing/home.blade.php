@@ -18,7 +18,7 @@
                     <p class="main-title">في بعض الوكالات في معقولة استبدال <br>أبجد هوز لإعطاء نظرة أكثر </p>
                     <p class="explane-title">في بعض الوكالات في 90 تعميم نص يسمى "الترام الأصفر" أو<br> "المترو الأصفر" معقولة استبدال أبجد هوز لإعطاء نظرة أكثر </p>
                     <div class="share-linke">
-                        <a href="" class="share">اشتراك</a>
+                        <a href="{{ route('register') }}" class="share">اشتراك</a>
 
                     </div>
                 </div>
@@ -80,19 +80,19 @@
                 </div>
                 <div class="number-dir col-md-8 row numbering-parent" dir="ltr">
                     <div class="numbering col-3 ">
-                        <span class="goal-number" data-goal="720"></span>
+                        <span class="goal-number" data-goal="{{ $files_count }}"></span>
                         <span class="number-owner">ملفات</span>
                     </div>
                     <div class="numbering col-3  ">
-                        <span class="goal-number" data-goal="720"></span>
+                        <span class="goal-number" data-goal="{{ $books_count }}"></span>
                         <span class="number-owner">كتب</span>
                     </div>
                     <div class="numbering col-3 ">
-                        <span class="goal-number" data-goal="2000"></span>
+                        <span class="goal-number" data-goal="{{ $courses_count }}"></span>
                         <span class="number-owner">دورات تعليمية</span>
                     </div>
                     <div class="numbering col-3  ">
-                        <span class="goal-number" data-goal="350"></span>
+                        <span class="goal-number" data-goal="{{ $users_count }}"></span>
                         <span class="number-owner">مشترك</span>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                         بانتظارك العديد من المصارد المتنوعة من دورات<br> عليمة وكتب وغيرها من الملفات
                     </p>
                     <div class="share-linke">
-                        <a href="" class="share">اشتراك</a>
+                        <a href="{{ route('register') }}" class="share">اشتراك</a>
                     </div>
                 </div>
             </div>

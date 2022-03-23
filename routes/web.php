@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\SocialiteLoginController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Documentation\ReferencesController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
 use App\Http\Controllers\PagesController;
@@ -94,6 +95,7 @@ Route::get('unfavorite/{course}', [CourseController::class, 'unFavoriteCourse'])
 
 Route::put('user/settings', [\App\Http\Controllers\DashboardController::class, 'user_settings'])->name('user.settings');
 
+Route::get('search', [LandingController::class, 'search'])->name('search');
 
 Route::group(['as' => 'dashboard.', 'prefix' => 'dashboard', 'middleware' => ['auth']], static function () {
     Route::get('profile', [\App\Http\Controllers\DashboardController::class, 'profile'])->name('profile');

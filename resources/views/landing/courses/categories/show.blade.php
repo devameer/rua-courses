@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <p class="section-title">
-                    الدورات
+                    {{ $category->name }}
                 </p>
             </div>
 

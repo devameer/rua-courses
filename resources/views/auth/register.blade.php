@@ -45,19 +45,12 @@
                     </span>
                 @enderror
             </div>
-            {{-- <div class="contact-inputs">
+             <div class="contact-inputs">
             <label for="phoneNumber">رقم الهاتف</label>
             <input type="tel" id="phoneNumber" placeholder="000 0000 0000">
         </div>
-        <div class="mb-3 arabic-dir">
-            <label for="selectCountry" class="form-label">الدولة</label>
-            <select id="selectCountry" class="sign-select" aria-placeholder="dfdf">
-                <option>يرجى اختيار الدولة</option>
-                <option>الكويت</option>
-                <option>قطر</option>
-                <option>السعودية</option>
-            </select>
-        </div>
+        @include('cards.countriesInput')
+       {{--
         <div class="mb-3 arabic-dir">
             <label for="selectCountry" class="form-label">الجنسية</label>
             <select id="selectCountry" class="sign-select">

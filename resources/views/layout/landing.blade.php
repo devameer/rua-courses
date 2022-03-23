@@ -58,10 +58,10 @@
                                     تواصل معنا
                                 </a>
                             </li>
-                            <form class="d-flex">
+                            <form class="d-flex" action="{{ route('search') }}" method="get">
                                 <img src="/landing/images/Search.png" alt="">
 
-                                <input class="form-control me-2" type="search" placeholder="يمكنك البحث عن الدورات، الكتب، الملفات" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="يمكنك البحث عن الدورات  " aria-label="Search" name="_q">
                             </form>
 
                             @if (auth()->check())

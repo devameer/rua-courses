@@ -1116,7 +1116,9 @@ iframe .ytp-pause-overlay.ytp-scroll-min {
     justify-content: center;
     align-items: center;
 }
-
+.video-row {
+    padding: 0 5%;
+}
 
 /* End Download link  */
 
