@@ -556,7 +556,9 @@ body {
 }
 
 .books-section .book-row .book-box img {
-    width: 100%
+    width: 100%;
+    height: 211px;
+    object-fit: contain;
 }
 
 .books-section .box-discreption {
