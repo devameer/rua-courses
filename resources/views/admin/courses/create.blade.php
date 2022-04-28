@@ -52,7 +52,7 @@
                 <div class="form-group mb-10">
                     <label class="form-label mb-5">مدرس الدورة</label>
                     <select class="form-select" name="teacher_id" data-placeholder="Select an option">
-                        <option>إختر مدرس الدورة</option>
+                        <option value="">إختر مدرس الدورة</option>
                         @foreach ($teachers as $teacher)
                             <option {{ $course->teacher_id == $teacher->id ? 'selected' : null }} value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                         @endforeach
@@ -61,7 +61,7 @@
                 <div class="form-group mb-10">
                     <label class="form-label mb-5">تصنيف الدورة</label>
                     <select class="form-select "  name="category_id" data-placeholder="Select an option">
-                        <option>إختر تصنيف الدورة</option>
+                        <option value="">إختر تصنيف الدورة</option>
                         @foreach ($categories as $category)
                             <option {{ $course->category_id == $category->id ? 'selected' : null }} value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach

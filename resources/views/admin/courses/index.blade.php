@@ -32,7 +32,10 @@
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 min-w-325px rounded-start">الدورة</th>
+                                <th class="min-w-125px">dublicate</th>
+
                                 <th class="min-w-125px">المرفقات</th>
+
                                 <th class="min-w-125px">الدروس </th>
 
                                 <th class="min-w-125px">تاريخ الإضافة</th>
@@ -52,7 +55,7 @@
 
                                             <div class="d-flex justify-content-start flex-column">
                                                 <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $course->name }}</a>
-                                                 <span class="text-muted fw-bold text-muted d-block fs-7">{{ $course->category->name }}</span>
+                                                 <span class="text-muted fw-bold text-muted d-block fs-7">{{ $course->category ? $course->category->name : 'غير مصنف' }}</span>
                                             </div>
                                         </div>
                                     </td>

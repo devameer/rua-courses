@@ -27,6 +27,10 @@
                     <label class="form-label"> رابط الفيديو</label>
                     <input type="text" class="form-control form-control-solid" name="video" value="{{ $lesson->video }}" placeholder="رابط الفيديو">
                 </div>
+                <div class="mb-10">
+                    <label class="form-label"> طول الفيديو</label>
+                    <input type="text" class="form-control form-control-solid" name="video_length" value="{{ $lesson->video_length }}" placeholder="طول الفيديو">
+                </div>
                 <div class="d-flex">
                     <button class="btn btn-primary btn-lg">حفظ البيانات</button>
                 </div>

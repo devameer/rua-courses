@@ -54,6 +54,9 @@ class CourseLessonController extends Controller
         $model->title = $request->input('title');
         $model->course_id = $course->id;
         $model->video = $request->video;
+        $model->video_length = $request->video_length;
+
+
 
         $model->save();
 
@@ -105,6 +108,11 @@ class CourseLessonController extends Controller
             $lesson->video = $request->input('video');
             $updated = true;
         }
+        if ($request->has('video_length') && $request->input('video_length') != null && $lesson->video_length != $request->input('video_length')) {
+            $lesson->video_length = $request->input('video_length');
+            $updated = true;
+        }
+
         if ($updated) {
             $lesson->update();
         }
@@ -123,7 +131,6 @@ class CourseLessonController extends Controller
     }
     public function destroy(Course $course , CourseLesson $lesson)
     {
-        UploadFiles::delete(UploaderController::TYPES['lessons.image'], $lesson->image);
         $lesson->delete();
         return redirect(route('admin.courses.lessons.index' , $course));
     }
